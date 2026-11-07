@@ -1,0 +1,327 @@
+{
+ "results": [
+  {
+   "id": "UC-00.1",
+   "name": "Bản đồ toàn quốc 34 tỉnh + chọn tỉnh",
+   "ok": true,
+   "note": "34 tỉnh, đảo: 4; crumb=\"Toàn quốc › TP. Hồ Chí Minh › Toàn địa giới · đất liền\"",
+   "ms": 2834
+  },
+  {
+   "id": "UC-00.3",
+   "name": "Dữ liệu trong khu vực + danh sách xã/phường",
+   "ok": true,
+   "note": "OK 23/168 phường (ranh OSM thật)",
+   "ms": 3686
+  },
+  {
+   "id": "UC-00.2",
+   "name": "Tìm khu vực/công trình",
+   "ok": true,
+   "note": "Toàn quốc › TP. Hồ Chí Minh › Toàn địa giới · đất liền › Phường Bến Thành",
+   "ms": 1688
+  },
+  {
+   "id": "UC-00.5",
+   "name": "Lớp: Ngày/Giờ vàng/Đêm, nguồn chiều cao, Mưa·triều·ngập",
+   "ok": true,
+   "note": "Có nhãn nguồn & giới hạn",
+   "ms": 6353
+  },
+  {
+   "id": "UC-00.6",
+   "name": "Phân tích tại tâm 1 km² + biểu đồ hình thái + xuất CSV",
+   "ok": true,
+   "note": "60 dòng; tải PhanTichKhuVuc_hcm_2026-11-06.csv",
+   "ms": 3748
+  },
+  {
+   "id": "UC-00.6b",
+   "name": "Vẽ vùng (đa giác) ra bộ chỉ số",
+   "ok": true,
+   "note": "OK",
+   "ms": 1177
+  },
+  {
+   "id": "UC-00.4",
+   "name": "Nhấp công trình → Thông tin công trình có provenance",
+   "ok": true,
+   "note": "Đủ 11 trường provenance",
+   "ms": 2636
+  },
+  {
+   "id": "UC-00.7",
+   "name": "Registry nguồn + tài liệu quy hoạch đủ trường",
+   "ok": true,
+   "note": "27 nguồn",
+   "ms": 1231
+  },
+  {
+   "id": "UC-00.14",
+   "name": "Click cầu BR-01 → Mở dự án/kịch bản sang Digital Twin",
+   "ok": true,
+   "note": "#twin?mode=simulation&scenario=BR-01&from=map",
+   "ms": 8064
+  },
+  {
+   "id": "UC-02.UR",
+   "name": "UR-01 trong thư viện (19) và chạy trên bản đồ",
+   "ok": true,
+   "note": "OK",
+   "ms": 7480
+  },
+  {
+   "id": "UC-00.9",
+   "name": "Điều hành 5 tab, KPI \"Chưa có\", phương án khoanh ≤10 ha, công việc gắn vị trí → BPMN",
+   "ok": true,
+   "note": "sketch=1, BPMN+1",
+   "ms": 4857
+  },
+  {
+   "id": "UC-00.8",
+   "name": "Vùng quản lý: tô màu, tạo vùng, xuất GeoJSON",
+   "ok": true,
+   "note": "VungQuanLy_hcm.geojson",
+   "ms": 3794
+  },
+  {
+   "id": "UC-00.10",
+   "name": "Tương lai: dự án hạ tầng, 7 tab, cảnh báo đã qua mốc",
+   "ok": true,
+   "note": "OK",
+   "ms": 1710
+  },
+  {
+   "id": "UC-00.13",
+   "name": "Đăng nhập theo địa bàn, lớp độ cao chi tiết + nhật ký",
+   "ok": true,
+   "note": "nhật ký 1 bản ghi",
+   "ms": 2682
+  },
+  {
+   "id": "UC-00.11",
+   "name": "Dashboard đa cấp: tổng quan, quy hoạch, Dự án & Stage-Gate, drill-down, chứng cứ, xuất",
+   "ok": true,
+   "note": "Dashboard_hcm_projects.csv",
+   "ms": 6772
+  },
+  {
+   "id": "UC-00.12",
+   "name": "Deep-link có phiên bản tái lập cảnh",
+   "ok": true,
+   "note": "map?v=VN-2026.11-r2&focus=dong-nai%3AKhu+%C4%91%E1%BA%A5t+DA-2026-017&view=province&mode=night&sel=DA-2026-017",
+   "ms": 4679
+  },
+  {
+   "id": "UC-00.T",
+   "name": "Tham quan tự động + Dừng",
+   "ok": true,
+   "note": "OK",
+   "ms": 1957
+  },
+  {
+   "id": "UC-05.1",
+   "name": "Demo 3: kiểm toán tờ trình mẫu → 2 lỗi + cảnh báo QCVN 2026 → sửa 1 nút",
+   "ok": true,
+   "note": "2 vị trí đỏ → 0 lỗi",
+   "ms": 2583
+  },
+  {
+   "id": "UC-04.1",
+   "name": "Demo 2: AI khởi tạo bộ hồ sơ + Excel dự toán",
+   "ok": true,
+   "note": "3 hồ sơ, 6 sheet, 54 công thức",
+   "ms": 4750
+  },
+  {
+   "id": "UC-06.1",
+   "name": "Demo 4: xác nhận hợp lệ → checklist, BPMN, cổng",
+   "ok": true,
+   "note": "checklist 0→34; cổng qua: G0,G1; BPMN chuyển: 1; ☑️Checklist: đã tích các mục trọng yếu của G0, G1, G2, G3 🔀BPMN: HS-307 → Sở XD 🗺️Dashboard bản đồ (MOD-00): trạng thá",
+   "ms": 1423
+  },
+  {
+   "id": "UC-06.2",
+   "name": "Timeline: kịch bản cung ứng vật liệu → tác động đường găng → duyệt",
+   "ok": true,
+   "note": "G12 +41 ngày",
+   "ms": 999
+  },
+  {
+   "id": "UC-06.3",
+   "name": "BPMN: làn 2 cấp, vị trí, bảng ánh xạ tenant",
+   "ok": true,
+   "note": "8 chip vị trí",
+   "ms": 622
+  },
+  {
+   "id": "REG",
+   "name": "Hồi quy: các tab cũ vẫn hiển thị",
+   "ok": true,
+   "note": "7 tab OK",
+   "ms": 2888
+  },
+  {
+   "id": "UC-00.15",
+   "name": "Nền GIS: ảnh vệ tinh Esri + công trình OSM + đổi nền / ngoại tuyến",
+   "ok": true,
+   "note": "trực tuyến: LOD1 · Ảnh vệ tinh z16 · 5 nền · đổi nền OK · công trình có osm:id",
+   "ms": 13599
+  },
+  {
+   "id": "UC-00.16",
+   "name": "Ô quy hoạch: bật lớp, chọn ô vượt chỉ tiêu, xem chỉ tiêu tối đa/hiện tại",
+   "ok": true,
+   "note": "43 lô vượt · chi tiết ô có tối đa/hiện tại/kết luận",
+   "ms": 7544
+  },
+  {
+   "id": "UC-00.17",
+   "name": "Biên tập công trình: đổi tầng, di chuyển, hoàn tác/làm lại, xóa, thêm khối mới",
+   "ok": true,
+   "note": "tầng 40 → 132 m · di chuyển/xoay · hoàn tác/làm lại · thêm HCM-PA-001 (18 tầng) · xóa 1",
+   "ms": 15387
+  },
+  {
+   "id": "UC-00.18",
+   "name": "Biên tập mô hình dự án: cầu BR-01 + khu DA-2026-017 → khối lượng, kiểm tra, sang Digital Twin",
+   "ok": true,
+   "note": "cầu 5 nhịp, tĩnh không 8 m → cảnh báo; Twin nhận thông số · khu đất 8 khối × 30 tầng → vượt chỉ tiêu (DNA-QH-244)",
+   "ms": 10078
+  },
+  {
+   "id": "UC-00.19",
+   "name": "Phương án: lưu, so sánh, về hiện trạng, nạp lại, xuất JSON, giữ sau khi tải lại trang",
+   "ok": true,
+   "note": "PAN-HCM-001 lưu/so sánh 3 cột/nạp lại/xuất PhuongAn_hcm_Vùng_quản_lý_test_2026-11-06.json/giữ sau reload",
+   "ms": 19274
+  },
+  {
+   "id": "UC-02.UR2",
+   "name": "UR-01 trên DEM thật với tham số mở rộng (nước biển dâng, trạm bơm, bê tông hóa)",
+   "ok": true,
+   "note": "ảnh hưởng: 0 m → 251; +0,8 m nước biển dâng → 497; + trạm bơm → 407",
+   "ms": 7195
+  },
+  {
+   "id": "UC-02.P1",
+   "name": "Tham số mới (nhịp, bề rộng, tĩnh không, xung kích, ngưỡng) hiển thị và làm đổi kết quả",
+   "ok": true,
+   "note": "7 tham số mới; 1 nhịp → 500 kN/nhịp; run hiện ngưỡng",
+   "ms": 2811
+  },
+  {
+   "id": "UC-02.P2",
+   "name": "Ngưỡng do kỹ sư nhập làm đổi PASS ↔ FAIL",
+   "ok": true,
+   "note": "PASS → FAIL (tải cho phép 100) → PASS → FAIL (tĩnh không yêu cầu 13 m)",
+   "ms": 1248
+  },
+  {
+   "id": "UC-02.P3",
+   "name": "Quét 1 tham số: biểu đồ, đường ngưỡng, điểm chuyển trạng thái",
+   "ok": true,
+   "note": "30 điểm, 2 điểm chuyển: Điểm chuyển trạng thái: PASS → WARNING tại vehicles ≈ 919 xe (giữa 886–952) WARNING → FAIL tại vehicles ≈ 1.050 xe (giữa",
+   "ms": 1674
+  },
+  {
+   "id": "UC-02.P4",
+   "name": "Quét 2 tham số → ma trận nhiệt PASS/WARN/FAIL",
+   "ok": true,
+   "note": "121 ô · PASS 112 · FAIL 3",
+   "ms": 917
+  },
+  {
+   "id": "UC-02.P5",
+   "name": "Độ nhạy tornado ±20%, sắp xếp theo ảnh hưởng",
+   "ok": true,
+   "note": "11 tham số; ảnh hưởng lớn nhất = 4.8",
+   "ms": 319
+  },
+  {
+   "id": "UC-02.P6",
+   "name": "Monte Carlo UR-01: xác suất FAIL + histogram; lưu vào lịch sử run",
+   "ok": true,
+   "note": "P(FAIL)=78.4%, 20 cột, đã lưu run",
+   "ms": 2153
+  },
+  {
+   "id": "UC-02.P7",
+   "name": "Bộ ca kiểm thử: 4 ca định sẵn + ca tự định nghĩa; chạy toàn bộ 19 kịch bản",
+   "ok": true,
+   "note": "BR-01: 4 → 5 ca; toàn bộ: 19 kịch bản × 77 ca",
+   "ms": 2397
+  },
+  {
+   "id": "UC-02.P8",
+   "name": "Tham số BR-01 lấy từ mô hình đã chỉnh trên Bản đồ 3D",
+   "ok": true,
+   "note": "Chiều dài 420 m, 5 nhịp từ phương án PA-E2E",
+   "ms": 2402
+  },
+  {
+   "id": "UC-07.1",
+   "name": "CAD 2D: lệnh vẽ & sửa kiểu AutoCAD (L, REC, C, DLI, O, TR, M, CO, U/REDO)",
+   "ok": true,
+   "note": "7 đối tượng mới · DIST 5.000 mm · Offset/Trim/Undo OK",
+   "ms": 4210
+  },
+  {
+   "id": "UC-07.2",
+   "name": "Công cụ kết cấu: lưới trục, cột, dầm, sàn, móng tự động",
+   "ok": true,
+   "note": "35 cột · 58 dầm · 24 sàn · 37 móng",
+   "ms": 1371
+  },
+  {
+   "id": "UC-07.3",
+   "name": "Phân tích kết cấu khung 3D: đủ tiêu chí kỹ thuật, thời gian giải",
+   "ok": true,
+   "note": "8/8 tiêu chí đạt · 432 ms (gồm hiển thị) · 2664 bậc tự do",
+   "ms": 771
+  },
+  {
+   "id": "UC-07.4",
+   "name": "Dựng 3D từ bản vẽ, tô mức sử dụng, hình biến dạng",
+   "ok": true,
+   "note": "3D + biến dạng ×80",
+   "ms": 3998
+  },
+  {
+   "id": "UC-07.5",
+   "name": "Vật liệu: bóc khối lượng từ mô hình, đủ/thiếu theo hợp đồng, kịp tiến độ",
+   "ok": true,
+   "note": "thép hợp đồng 300 t → THIẾU · bê tông 200 m³/tháng → trễ 490 ngày",
+   "ms": 3372
+  },
+  {
+   "id": "UC-07.6",
+   "name": "Kịch bản cực đoan (bão, lũ, động đất, nhiệt, vật liệu, cung ứng) + AI đánh giá + Monte Carlo",
+   "ok": true,
+   "note": "7 kịch bản: 3 đạt, 4 không đạt · 13,7% P(vượt)",
+   "ms": 14271
+  },
+  {
+   "id": "UC-07.7",
+   "name": "Xuất / nhập DXF (khứ hồi)",
+   "ok": true,
+   "note": "DXF 37 KB · nhập lại +246 đối tượng",
+   "ms": 1394
+  },
+  {
+   "id": "UC-07.8",
+   "name": "Lưu run kết cấu sang Digital Twin; Twin có lối vào mô hình thực",
+   "ok": true,
+   "note": "RUN-20261106154442624 · PASS",
+   "ms": 4146
+  },
+  {
+   "id": "UC-07.9",
+   "name": "Sa bàn: đưa mô hình thiết kế CAD vào khu đất thực trên bản đồ (tương lai ↔ hiện trạng, tiến độ thi công)",
+   "ok": true,
+   "note": "12 tầng · 44×31 m · tiến độ 50 % → 6/12 tầng · xoay 30° · bật/tắt tương lai OK",
+   "ms": 10103
+  }
+ ],
+ "errors": []
+}

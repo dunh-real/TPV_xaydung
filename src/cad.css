@@ -1,0 +1,35 @@
+/* ===== Thiết kế CAD & Kết cấu ===== */
+.cadx{display:flex;flex-direction:column;height:calc(100vh - 150px);min-height:640px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.cad-ribbon{display:flex;gap:2px;background:#eef2f7;border-bottom:1px solid var(--line);padding:4px 6px;overflow-x:auto}
+.cad-grp{display:flex;flex-direction:column;align-items:center;border-right:1px solid #d6dde6;padding:0 6px}.cad-grp>span{font-size:10px;color:#64748b;font-weight:700}
+.cad-btns{display:flex;gap:1px;align-items:center}
+.cad-btns button[data-c]{display:flex;flex-direction:column;align-items:center;width:52px;border:1px solid transparent;background:transparent;border-radius:6px;padding:3px 1px;cursor:pointer;font-size:9.5px;color:#334155;line-height:1.1}
+.cad-btns button[data-c] b{font-size:16px;color:#0f4c81}.cad-btns button[data-c]:hover{background:#dbeafe;border-color:#93c5fd}
+.cad-view{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:6px 9px;font-weight:700;font-size:12px;cursor:pointer;margin-right:3px}.cad-view.on{background:#0f4c81;color:#fff;border-color:#0f4c81}
+.cad-body{flex:1;display:flex;min-height:0}
+.cad-main{flex:1;position:relative;min-width:0;background:#212830}
+.cad-main canvas{display:block;cursor:none}
+.cad3d{position:absolute;inset:0}
+.cad-legend{position:absolute;right:10px;bottom:10px;background:rgba(255,255,255,.93);border-radius:8px;padding:6px 9px;font-size:11px;display:flex;flex-direction:column;gap:2px}
+.cad-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.cad-side{width:370px;border-left:1px solid var(--line);display:flex;flex-direction:column;background:#fff}
+.cad-panel{flex:1;overflow:auto;padding:10px 12px;display:flex;flex-direction:column;gap:7px}.cad-panel>*{flex-shrink:0}
+.cad-panel .mt{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.cad-cmd{background:#1b2027;color:#cbd5e1;font-family:Consolas,'Courier New',monospace;font-size:12px;border-top:1px solid #000}
+.cad-hist{height:76px;overflow:auto;padding:3px 8px}.cad-hist .cmd{color:#7dd3fc}.cad-hist .err{color:#fca5a5}.cad-hist .res{color:#86efac}
+.cad-line{display:flex;align-items:center;gap:6px;padding:3px 8px;background:#11151a}#cadPrompt{color:#facc15;white-space:nowrap}
+.cad-line input{flex:1;background:transparent;border:0;color:#fff;font-family:inherit;font-size:13px;outline:none}
+.cad-status{display:flex;gap:6px;align-items:center;padding:3px 8px;font-size:11px;background:#eef2f7;color:#334155;font-family:system-ui,sans-serif}
+.cad-status #cadXY{min-width:150px;font-family:Consolas,monospace}
+.cad-status button{border:1px solid #cbd5e1;background:#fff;border-radius:4px;font-size:10.5px;font-weight:700;padding:1px 6px;cursor:pointer;color:#64748b}.cad-status button.on{background:#0f4c81;color:#fff;border-color:#0f4c81}
+.task.warn{border-color:#fca5a5;background:#fef2f2}.task.scen.on{border-color:var(--accent);background:#fff7ed}
+.mc-hist{display:flex;align-items:flex-end;gap:2px;height:60px;margin-top:4px}.mc-hist i{flex:1;border-radius:2px 2px 0 0;min-height:1px}
+.ai-text{font-size:12.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line2);border-radius:8px;padding:8px}
+.err{color:#dc2626}
+.cad-ribbon{flex-wrap:wrap;overflow:visible;row-gap:3px}
+.cad-btns button[data-c]{width:46px;font-size:9px}
+.cad-view{white-space:nowrap}
+.cad-grp{flex-shrink:0}
+.cadx{max-width:100%}
+/* thanh điều hướng: thêm tab CAD — thu gọn đệm để đủ 11 tab */
+.nav a{padding:8px 8px;font-size:12.5px;gap:4px}
