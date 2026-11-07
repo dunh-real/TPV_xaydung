@@ -8,6 +8,7 @@ import { CityMap3D, BASEMAPS } from '../lib/citymap3d.js';
 import { initEdit, applyWork, editPanel, bindEdit, editPick, zoningPanel, zoneDetail, addBlockPoly, sanbanOn } from './map-edit.js';
 import { generateCity, areaStats, ur01, toCSV, shapeArea, inShape, polygonArea, groundAt, HEIGHT_BINS, ZONE_CLASSES, zoneStats, zoneAt } from '../lib/citygen.js';
 import { TENANTS, TENANT_DETAIL, SOURCES, PLAN_DOCS, PROJECTS, FUTURE, GROUPS, HEIGHT_SOURCES, LOD_LEVELS, DATASET_VERSION, NA, agencyMap, localToLonLat, lonLatToLocal } from '../data/nationwide.js';
+import { buildingReportSource } from '../lib/report-input.js';
 import { renderDashboard } from './map-dashboard.js';
 
 let root, map, S;
@@ -455,6 +456,7 @@ function detailHtml() {
         <span>Diện mạo & vật liệu</span><span>${{ glass: 'Kính', concrete: 'Bê tông', plaster: 'Tường sơn', brick: 'Gạch', metal: 'Mái tôn/kim loại' }[b.mat]}</span>
         <span>Mức chi tiết theo vị trí</span><span>LOD1 (LOD2 khi có ảnh nghiêng; LOD3 khi có BIM/drone)</span>
       </div>
+      <button class="btn pri" style="margin-top:8px" data-act="reportBuilding">📄 Dùng cho Hồ sơ AI</button><p class="small muted">Nạp thông tin công trình và nguồn dữ liệu; bổ sung thông tin còn thiếu tại Hồ sơ AI.</p>
       <div class="row" style="margin-top:8px"><button class="btn sm" data-act="anaHere" data-x="${b.x}" data-z="${b.z}">📊 Phân tích tại đây</button><button class="btn sm" data-act="task">🗂 Tạo công việc</button><button class="btn sm pri" data-act="editB">🛠 Biên tập công trình</button></div>`;
   }
   if (s.type === 'zone') return zoneDetail(s.idx);
@@ -555,7 +557,24 @@ function bindInfo(el) {
   el.querySelectorAll('[data-ward]').forEach((r) => (r.onclick = () => { const w = city().wards[+r.dataset.ward]; map.flyTo(w.cx, w.cz, 2300); ui.sel = { type: 'ground', x: w.cx, z: w.cz }; drawInfo(); topState(); }));
 }
 function act(a, d) {
-  if (a === 'enter') goTenant(d.id);
+  if (a === 'reportBuilding') {
+    const c = city(), b = c?.buildings[ui.sel?.i];
+    if (ui.sel?.type !== 'building' || !b || b.deleted) return;
+    const snapshot = buildingReportSource({ ...b, ground: canSeeElevation() ? b.ground : Math.round(b.ground) }, {
+      tenant: ui.tenant, province: tname(ui.tenant), location: `${c.wards[b.ward].name}, ${tname(ui.tenant)}`,
+      boundary: b.pts.map(([x, z]) => localToLonLat(ui.tenant, x, z)),
+      heightSource: HEIGHT_SOURCES[b.src], zone: c.zones[b.zone], fetched: c.gis.fetched,
+      datasetVersion: DATASET_VERSION, preciseElevation: canSeeElevation(), groundNote: 'DEM SRTM/Terrarium 30 m, DSM; không phải DTM' });
+    setState((s) => {
+      const report = s.report || { inputs: {} }, old = report.inputs?.model_scope === 'map' ? report.building?.building.id : 'project';
+      const inputsBySource = { ...report.inputsBySource, [old]: report.inputs };
+      s.report = { ...report, building: snapshot, inputsBySource,
+        inputs: { ...inputsBySource[b.id], model_scope: 'map' } };
+    }, true);
+    location.hash = 'docs';
+    toast('Đã nạp công trình. Chọn mẫu để tạo hồ sơ.', 'ok');
+  }
+  else if (a === 'enter') goTenant(d.id);
   else if (a === 'goAnalysis') { ui.group = 'analysis'; drawPanel(); topState(); }
   else if (a === 'anaHere') runAnalysis({ type: 'circle', cx: +d.x, cz: +d.z, r: Math.sqrt((ui.radius * 1e6) / Math.PI) });
   else if (a === 'exportA') exportAnalysis();

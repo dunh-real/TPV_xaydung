@@ -1,5 +1,5 @@
 // AI Copilot (ngăn kéo bên phải) + Cài đặt AI
-import { askClaude, aiCfg, saveAiCfg, MODELS, aiOnline } from './lib/ai.js';
+import { askClaude, aiCfg, saveAiCfg, aiOnline } from './lib/ai.js';
 import { contextText } from './lib/docgen.js';
 import { getState } from './store.js';
 import { esc, modal, toast } from './lib/util.js';
@@ -68,9 +68,9 @@ export function initCopilot() {
 }
 export function refreshMode() {
   const el = drawer?.querySelector('#aimode');
-  if (el) el.innerHTML = aiOnline() ? `<span class="ai-dot on"></span>Claude API · ${aiCfg().model}` : `<span class="ai-dot"></span>Chế độ mô phỏng offline`;
+  if (el) el.innerHTML = aiOnline() ? `<span class="ai-dot on"></span>Qwen · ${aiCfg().model}` : `<span class="ai-dot"></span>Chế độ mô phỏng offline`;
   const tb = document.getElementById('aiStatus');
-  if (tb) tb.innerHTML = `<span class="ai-dot ${aiOnline() ? 'on' : ''}"></span>${aiOnline() ? 'Claude: Online' : 'AI: Offline'}`;
+  if (tb) tb.innerHTML = `<span class="ai-dot ${aiOnline() ? 'on' : ''}"></span>${aiOnline() ? 'AI: Qwen' : 'AI: Offline'}`;
 }
 export function openCopilot(prefill) {
   drawer.classList.add('open');
@@ -100,15 +100,13 @@ async function send(q) {
 export function openAiSettings() {
   const c = aiCfg();
   modal({
-    title: '⚙ Cài đặt AI (Claude API)',
+    title: '⚙ Cài đặt AI',
     body: `<div class="col">
-      <div class="disclaimer">Bản demo chạy được hoàn toàn offline với bộ máy mô phỏng. Nhập Claude API key để AI Copilot, AI soạn hồ sơ và AI pháp lý dùng mô hình Claude thật. Key chỉ lưu trong trình duyệt của bạn (localStorage) và gửi trực tiếp tới api.anthropic.com.</div>
-      <label class="f">Claude API key<input type="password" id="k" value="${esc(c.key)}" placeholder="sk-ant-..."></label>
-      <label class="f">Mô hình<select id="m">${MODELS.map((m) => `<option value="${m.id}" ${m.id === c.model ? 'selected' : ''}>${m.name}</option>`).join('')}</select></label>
-      <p class="small muted">Gợi ý (theo Sổ tay "Claude cho Kỹ sư"): việc càng cần suy luận và độ chính xác (pháp lý, dự toán) thì càng nên chọn mô hình mạnh.</p></div>`,
+      <p>Qwen được gọi qua server của ứng dụng. Địa chỉ, model, API key và thinking cấu hình trong file .env.</p>
+      <label class="f">Chế độ<select id="mode"><option value="qwen" ${c.mode !== 'offline' ? 'selected' : ''}>Qwen</option><option value="offline" ${c.mode === 'offline' ? 'selected' : ''}>Mô phỏng offline</option></select></label>
+      <p class="small muted">Model: ${esc(c.model)}. Khi tạo hồ sơ, có thể chọn chỉ điền template.</p></div>`,
     actions: [
-      { label: 'Xóa key', cls: 'btn danger', onClick: () => { saveAiCfg({ ...c, key: '' }); refreshMode(); toast('Đã xóa API key — chuyển về chế độ offline'); } },
-      { label: 'Lưu', cls: 'btn pri', onClick: (w) => { saveAiCfg({ key: w.querySelector('#k').value.trim(), model: w.querySelector('#m').value }); refreshMode(); toast('Đã lưu cài đặt AI', 'ok'); } },
+      { label: 'Lưu', cls: 'btn pri', onClick: (w) => { saveAiCfg({ mode: w.querySelector('#mode').value }); refreshMode(); toast('Đã lưu chế độ AI', 'ok'); } },
     ],
   });
 }

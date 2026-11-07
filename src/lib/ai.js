@@ -1,24 +1,20 @@
 // =====================================================================
-// AI COPILOT — kết nối Claude API (tùy chọn) + bộ máy mô phỏng offline
+// AI COPILOT — Qwen qua server cùng origin + bộ máy mô phỏng offline
 // Nguyên tắc (theo Sổ tay "Claude cho Kỹ sư"): AI đề xuất – Kỹ sư quyết định.
 // =====================================================================
 const CFG_KEY = 'aipm-dt-ai-cfg';
-export const MODELS = [
-  { id: 'claude-opus-5-5', name: 'Claude Opus 5.5 — tư duy sâu (khuyên dùng cho hồ sơ/pháp lý)' },
-  { id: 'claude-sonnet-5-5', name: 'Claude Sonnet 5.5 — cân bằng tốc độ/chất lượng' },
-  { id: 'claude-haiku-5-5', name: 'Claude Haiku 5.5 — nhanh, việc đơn giản' },
-];
+export const MODELS = [{ id: 'Qwen/Qwen3.6-35B-A3B-FP8', name: 'Qwen (cấu hình trên server)' }];
 export function aiCfg() {
   try {
-    return { model: MODELS[0].id, key: '', ...JSON.parse(localStorage.getItem(CFG_KEY) || '{}') };
+    return { mode: 'qwen', ...JSON.parse(localStorage.getItem(CFG_KEY) || '{}'), model: MODELS[0].id };
   } catch {
-    return { model: MODELS[0].id, key: '' };
+    return { mode: 'qwen', model: MODELS[0].id };
   }
 }
 export function saveAiCfg(c) {
-  localStorage.setItem(CFG_KEY, JSON.stringify(c));
+  localStorage.setItem(CFG_KEY, JSON.stringify({ mode: c.mode }));
 }
-export const aiOnline = () => !!aiCfg().key;
+export const aiOnline = () => aiCfg().mode !== 'offline';
 
 export const SYSTEM_PROMPT = `Bạn là AI Copilot chuyên ngành đầu tư xây dựng công tại Việt Nam, tích hợp trong nền tảng AIPM OS. Cấu hình demo có Stage-Gate G0–G16, trình tự, checklist và BPMN; số lượng mục áp dụng phải lấy từ phiên bản cấu hình thực tế, không coi các con số thống kê trong tài liệu nguồn là baseline mặc định.
 Nguyên tắc bắt buộc:
@@ -28,36 +24,23 @@ Nguyên tắc bắt buộc:
 - Phân biệt L0 minh họa, L1 sơ bộ, L2 có solver và L3 được kỹ sư xác nhận. Không suy ra ứng suất, chuyển vị hoặc khả năng chịu lực từ animation, QTO hay màu 3D.
 - AI đề xuất — Kỹ sư quyết định và chịu trách nhiệm.`;
 
-export async function askClaude(userPrompt, context = '', { maxTokens = 1800 } = {}) {
-  const cfg = aiCfg();
-  if (!cfg.key) return { offline: true, text: offlineAnswer(userPrompt, context) };
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': cfg.key,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
-    body: JSON.stringify({
-      model: cfg.model,
-      max_tokens: maxTokens,
-      system: SYSTEM_PROMPT + (context ? `\n\nDỮ LIỆU DỰ ÁN HIỆN TẠI (từ Digital Twin & AIPM OS):\n${context}` : ''),
-      messages: [{ role: 'user', content: userPrompt }],
-    }),
+export async function askLLM(userPrompt, context = '', { maxTokens = 1800 } = {}) {
+  if (!aiOnline()) return { offline: true, text: offlineAnswer(userPrompt, context) };
+  const res = await fetch('/api/llm/chat', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(125000),
+    body: JSON.stringify({ prompt: userPrompt, context, system: SYSTEM_PROMPT, maxTokens }),
   });
-  if (!res.ok) {
-    const t = await res.text();
-    throw new Error(`Claude API lỗi ${res.status}: ${t.slice(0, 300)}`);
-  }
-  const j = await res.json();
-  return { offline: false, text: (j.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('\n') };
+  const result = await res.json();
+  if (!res.ok) throw new Error(result.error || 'Không kết nối được LLM. Kiểm tra server và file .env.');
+  return { offline: false, text: result.text };
 }
+// Giữ tên hàm cũ cho các màn đang dùng chung AI.
+export const askClaude = askLLM;
 
 // --------- Trả lời offline (mô phỏng) theo từ khóa ---------
 function offlineAnswer(q, ctx) {
   const s = q.toLowerCase();
-  const tail = `\n\n**TỰ KIỂM**\n1. Giả thiết: số liệu lấy từ mô hình Digital Twin mô phỏng của dự án demo.\n2. Cần kỹ sư tra lại: căn cứ pháp lý, đơn giá, định mức địa phương tại thời điểm lập hồ sơ.\n3. Không áp dụng khi dự án thuộc trường hợp đặc thù (quốc phòng, an ninh, khẩn cấp...).\n\n_(Chế độ mô phỏng offline — nhập Claude API key trong ⚙ Cài đặt AI để nhận câu trả lời thật.)_`;
+  const tail = `\n\n**TỰ KIỂM**\n1. Giả thiết: số liệu lấy từ mô hình Digital Twin mô phỏng của dự án demo.\n2. Cần kỹ sư tra lại: căn cứ pháp lý, đơn giá, định mức địa phương tại thời điểm lập hồ sơ.\n3. Không áp dụng khi dự án thuộc trường hợp đặc thù (quốc phòng, an ninh, khẩn cấp...).\n\n_(Chế độ mô phỏng offline — bật Qwen trong ⚙ Cài đặt AI để gọi LLM.)_`;
   if (/ngập|thoát nước|mưa/.test(s))
     return `**Phân tích thoát nước mưa / nguy cơ ngập úng**\n- Khu vực trũng nằm dọc tuyến suối cắt chéo phía Tây khu đất.\n- Đề xuất: cao độ san nền tối thiểu = mực nước ngập mô phỏng + 0,3 m; bố trí hồ điều hòa hoặc mương thu dọc tim suối cũ.\n- Ưu tiên kiểm tra lại cường độ mưa thiết kế theo số liệu trạm khí tượng gần nhất.${tail}`;
   if (/san nền|đào|đắp|khối lượng/.test(s))

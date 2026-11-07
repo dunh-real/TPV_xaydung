@@ -3,11 +3,12 @@
 // Sinh văn bản theo thể thức NĐ 30/2020/NĐ-CP; số liệu lấy trực tiếp
 // từ mô hình 3D/2D (diện tích, quy mô, khối lượng, chi phí...).
 // =====================================================================
-import { generatePlan, planMetrics, earthwork, costEstimate, floodSim, gradedSurface, polyArea, progress4D, demGrid } from './engine.js';
+import { planMetrics, earthwork, costEstimate, floodSim, gradedSurface, polyArea, progress4D, demGrid } from './engine.js';
 import { fmt, fmtInt, esc, viLongDate, todayISO } from './util.js';
+import { currentPlan } from './plan.js';
 
 export function twinFacts(st) {
-  const p = st.twin.scenario ? generatePlan(st.twin.scenario, st.params) : null;
+  const p = currentPlan(st);
   const m = p ? planMetrics(p) : null;
   const pad = st.twin.pad ?? (p ? demGrid().mean : null);
   const ew = pad != null ? earthwork(pad, p?.lakes || []) : null;

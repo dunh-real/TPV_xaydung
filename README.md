@@ -25,6 +25,17 @@ Nếu `node` không được nhận diện, hãy cài Node.js từ trang chính 
 
 ## Chạy project trên Windows PowerShell
 
+**Luồng hồ sơ template 01–04 + Qwen (cập nhật):** xem [Input hồ sơ](docs/INPUT_HO_SO.md). Cần thêm Python 3 để xuất DOCX/XLSX. Chạy bằng Vite để có API hồ sơ; mở riêng HTML không có các API này.
+
+Trên macOS:
+
+```bash
+cd "/Users/binhphuccompany/Documents/TPV/xaydung/aipm-digital-twin-demo"
+npm ci
+cp .env.example .env
+npm run dev
+```
+
 ### 1. Mở đúng thư mục project
 
 ```powershell
@@ -159,8 +170,9 @@ npm.cmd run dev -- --port 5174
 Trong ứng dụng, bấm **📁 Dự án** → **Khôi phục dữ liệu demo**. Thao tác này xóa trạng thái demo trong `localStorage`, không xóa file nguồn của project.
 
 ## AI
-- Mặc định demo chạy **offline**, dùng bộ máy mô phỏng nên không cần Internet hay API key.
-- Muốn dùng Claude thật: bấm nút **AI: Offline** trên thanh trên cùng rồi nhập Claude API key. Key chỉ lưu trong trình duyệt và được gửi thẳng tới api.anthropic.com. Mặc định dùng mô hình Claude Opus 5.5; có thể chọn Sonnet 5.5 hoặc Haiku 5.5.
+- Mặc định gọi **Qwen/Qwen3.6-35B-A3B-FP8** qua server cùng origin, `LLM_ENABLE_THINKING=false`. Cấu hình endpoint và key nằm trong `.env`/biến môi trường, theo `.env.example`.
+- Trong **Cài đặt AI**, chọn **Mô phỏng offline** để dùng câu trả lời mẫu và điền template không gọi LLM.
+- **Hồ sơ AI** dùng 4 template gốc trong `templates/`, xuất DOCX/XLSX; có nút bổ sung input và đóng gói JSON. Danh mục input: `examples/report-input.json`, schema tương ứng và `docs/INPUT_HO_SO.md`.
 
 ## Kịch bản trình diễn (45–60 phút)
 

@@ -1,5 +1,6 @@
 // MOD-01/02/03: dữ liệu đa nguồn, QTO, kịch bản và Digital Twin.
 import { getState, setState } from '../store.js';
+import { currentPlan as editedPlan } from '../lib/plan.js';
 import { TwinScene } from '../lib/scene3d.js';
 import {
   SITE, demGrid, polyArea, polyPerimeter, generatePlan, planMetrics, scorePlans,
@@ -63,17 +64,7 @@ export function render(el) {
 }
 
 const T = () => getState().twin;
-const currentPlan = () => {
-  const t = T();
-  if (!t.scenario) return null;
-  const plan = generatePlan(t.scenario, getState().params);
-  const edits = t.planEdits || {};
-  plan.buildings = plan.buildings.map((b) => {
-    const e = edits[b.id] || {}, x = e.x ?? b.x, y = e.y ?? b.y, w = e.w ?? b.w, d = e.d ?? b.d;
-    return { ...b, ...e, x, y, w, d, materialCode: e.materialCode ?? b.materialCode ?? 'BT-C30', cx: x + w / 2, cy: y + d / 2 };
-  }).filter((b) => !b.deleted).concat((t.customBuildings || []).map((b) => ({ ...b, materialCode: b.materialCode || 'BT-C30', cx: b.x + b.w / 2, cy: b.y + b.d / 2 })));
-  return plan;
-};
+const currentPlan = () => editedPlan(getState());
 const currentPad = () => T().pad ?? balancedPad(1, currentPlan()?.lakes || []);
 const activeRun = () => T().runs.find((r) => r.runId === T().activeRunId) || T().runs[0] || null;
 

@@ -1,0 +1,237 @@
+{
+  "tenant": "hcm",
+  "province": "TP. Hồ Chí Minh",
+  "location": "Phường Sài Gòn, TP. Hồ Chí Minh",
+  "boundary": [
+    [
+      106.70435623658645,
+      10.773851456486339
+    ],
+    [
+      106.70465525737654,
+      10.773582775465895
+    ],
+    [
+      106.7049250161933,
+      10.77384964718654
+    ],
+    [
+      106.70499268450666,
+      10.773787226343405
+    ],
+    [
+      106.70518471620673,
+      10.773975393522706
+    ],
+    [
+      106.70480431055327,
+      10.774320969784693
+    ]
+  ],
+  "heightSource": {
+    "label": "Giá trị trong nguồn",
+    "color": "#2563eb",
+    "priority": 1
+  },
+  "zone": {
+    "idx": 395,
+    "id": "HCM-QH-396",
+    "cls": "HH",
+    "poly": [
+      [
+        -280,
+        40
+      ],
+      [
+        -240,
+        0
+      ],
+      [
+        -200,
+        0
+      ],
+      [
+        0,
+        180
+      ],
+      [
+        140,
+        320
+      ],
+      [
+        140,
+        440
+      ],
+      [
+        120,
+        560
+      ],
+      [
+        80,
+        560
+      ],
+      [
+        -200,
+        540
+      ],
+      [
+        -280,
+        60
+      ]
+    ],
+    "area": 117600,
+    "cells": 294,
+    "cx": -64.82993197278911,
+    "cz": 333.265306122449,
+    "limits": {
+      "md": 65,
+      "floors": 45,
+      "far": 10
+    }
+  },
+  "fetched": "2026-11-05",
+  "datasetVersion": "VN-2026.11-r2",
+  "preciseElevation": false,
+  "groundNote": "DEM SRTM/Terrarium 30 m, DSM; không phải DTM",
+  "variant": {
+    "name": "Phương án A",
+    "base": "VN-2026.11-r2",
+    "edits": {},
+    "added": []
+  },
+  "building": {
+    "i": 137,
+    "id": "HCM-B-000138",
+    "x": -26.047032311089392,
+    "z": 226.9402777935589,
+    "w": 72.2,
+    "d": 56.5,
+    "rot": 2.3274610722827846,
+    "area": 3520.3599999999997,
+    "pts": [
+      [
+        -70.4,
+        237.5
+      ],
+      [
+        -37.7,
+        267.2
+      ],
+      [
+        -8.2,
+        237.7
+      ],
+      [
+        -0.8,
+        244.6
+      ],
+      [
+        20.2,
+        223.8
+      ],
+      [
+        -21.4,
+        185.6
+      ]
+    ],
+    "fp": "osm",
+    "osm": "w165491082",
+    "type": "commercial",
+    "typeName": "Thương mại",
+    "name": "Times Square",
+    "year": 2011,
+    "_base": {
+      "pts": [
+        [
+          -70.4,
+          237.5
+        ],
+        [
+          -37.7,
+          267.2
+        ],
+        [
+          -8.2,
+          237.7
+        ],
+        [
+          -0.8,
+          244.6
+        ],
+        [
+          20.2,
+          223.8
+        ],
+        [
+          -21.4,
+          185.6
+        ]
+      ],
+      "x": -26.047032311089392,
+      "z": 226.9402777935589,
+      "area": 3520.3599999999997,
+      "osm": "w165491082",
+      "type": "commercial",
+      "levels": 40,
+      "height": 164.9,
+      "snap": {
+        "h": 164.9,
+        "floors": 40,
+        "src": "SRC",
+        "conf": 0.95,
+        "prior": "Thẻ height trong OSM",
+        "mat": "concrete",
+        "ward": 14,
+        "ground": 13,
+        "w": 72.2,
+        "d": 56.5,
+        "rot": 2.3274610722827846,
+        "zone": 395
+      }
+    },
+    "h": 164.9,
+    "floors": 40,
+    "src": "SRC",
+    "conf": 0.95,
+    "prior": "Thẻ height trong OSM",
+    "ground": 13,
+    "ward": 14,
+    "mat": "concrete",
+    "zone": 395
+  },
+  "values": {
+    "project_name": "Times Square",
+    "project_location": "Phường Sài Gòn, TP. Hồ Chí Minh",
+    "document_place": "TP. Hồ Chí Minh",
+    "building_type": "Thương mại",
+    "building_footprint": 3520.3599999999997,
+    "building_height": 164.9,
+    "floors": 40,
+    "crs": "WGS84 — quy đổi từ hệ mét cục bộ của bản đồ",
+    "coordinates": "106.70435623658645, 10.773851456486339; 106.70465525737654, 10.773582775465895; 106.7049250161933, 10.77384964718654; 106.70499268450666, 10.773787226343405; 106.70518471620673, 10.773975393522706; 106.70480431055327, 10.774320969784693"
+  },
+  "capturedAt": "2026-11-07T14:12:51.726Z",
+  "demoInputs": {
+    "investor": "Công ty Cổ phần Đầu tư Phát triển Minh Phú",
+    "document_number": "32/TTr-MP",
+    "project_group": "Nhóm A",
+    "building_grade": "Cấp I",
+    "design_life": "50 năm",
+    "decider": "Hội đồng quản trị Công ty Cổ phần Đầu tư Phát triển Minh Phú",
+    "contact": "Ban Quản lý dự án – Công ty Cổ phần Đầu tư Phát triển Minh Phú, Phường Sài Gòn, TP. Hồ Chí Minh",
+    "recipient": "Cơ quan chuyên môn về xây dựng có thẩm quyền tại TP. Hồ Chí Minh",
+    "capital_source": "Vốn chủ sở hữu và vốn vay thương mại",
+    "duration": "24 tháng kể từ ngày khởi công; dự kiến từ quý I/2027 đến quý IV/2028",
+    "legal_basis": "Quyết định số 18/QĐ-MP ngày 15/09/2026 của Hội đồng quản trị Công ty Cổ phần Đầu tư Phát triển Minh Phú về việc thông qua chủ trương lập dự án; Quyết định số 25/QĐ-MP ngày 01/10/2026 về việc phê duyệt nhiệm vụ khảo sát và nhiệm vụ thiết kế; Hợp đồng tư vấn số 09/2026/HĐ-TV ngày 05/10/2026 về việc lập Báo cáo nghiên cứu khả thi đầu tư xây dựng; Biên bản số 12/BB-MP ngày 20/10/2026 về việc thống nhất phương án kiến trúc sơ bộ.",
+    "standards": "Danh mục tiêu chuẩn áp dụng theo nhiệm vụ thiết kế được phê duyệt tại Quyết định số 25/QĐ-MP ngày 01/10/2026; chi tiết trong thuyết minh thiết kế cơ sở gửi kèm",
+    "designer": "Công ty Cổ phần Tư vấn Thiết kế Kiến trúc Nam Việt",
+    "surveyor": "Công ty TNHH Khảo sát Địa kỹ thuật Thành Nam",
+    "reviewer": "Công ty Cổ phần Tư vấn Xây dựng An Phát",
+    "appraisal_scope": "Thẩm định Báo cáo nghiên cứu khả thi đầu tư xây dựng, bao gồm thiết kế cơ sở và các nội dung liên quan theo hồ sơ trình thẩm định",
+    "attachments": "Báo cáo nghiên cứu khả thi; thuyết minh và bản vẽ thiết kế cơ sở; báo cáo khảo sát địa hình, địa chất; nhiệm vụ thiết kế; dự kiến tổng mức đầu tư; hồ sơ năng lực các đơn vị tư vấn; bản sao các văn bản liên quan",
+    "contractor_capacity": "Bảng kê năng lực tổ chức và nhân sự chủ trì khảo sát, thiết kế; bản sao chứng chỉ năng lực và chứng chỉ hành nghề trong hồ sơ đính kèm",
+    "signer": "Nguyễn Minh Khang",
+    "planning_approval": "Chưa có văn bản phê duyệt quy hoạch trong nguồn dữ liệu; cần bổ sung trước khi hoàn thiện hồ sơ"
+  },
+  "demoNote": "Tên tổ chức, cá nhân, số văn bản và thông tin pháp lý trong demoInputs là dữ liệu hư cấu để minh họa, không mô tả hồ sơ pháp lý thực tế của Times Square."
+}

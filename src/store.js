@@ -41,6 +41,10 @@ export const GATE_REQ = {
 };
 
 export const DOC_TYPES = {
+  proposal: { name: '01 · Đề xuất dự án đầu tư (A.I.4)', gate: 'G1', icon: '📄' },
+  feasibility: { name: '02 · Tờ trình thẩm định BCNCKT (TT-1)', gate: 'G5', icon: '📄' },
+  eia: { name: '03 · Báo cáo ĐTM 2026', gate: 'G3', icon: '🌿' },
+  estimate: { name: '04 · Dự toán san nền & Tổng mức đầu tư', gate: 'G2', icon: '📊' },
   totrinh: { name: 'Tờ trình đề nghị thẩm định chủ trương đầu tư', gate: 'G1', icon: '📄' },
   tmdt: { name: 'Sơ bộ tổng mức đầu tư', gate: 'G2', icon: '💰' },
   dtm: { name: 'Báo cáo đánh giá tác động môi trường (dự thảo)', gate: 'G3', icon: '🌿' },
@@ -91,6 +95,7 @@ const defaults = () => ({
   },
   checklist: {}, // id -> {done, file, draft, ai:'pass'|'warn', by}
   docs: [],
+  report: { inputs: {} },
   workflow: seedWorkflow(),
   gates: {}, // G0 -> {passed:true, at}
   filter: 'all',

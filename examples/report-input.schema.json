@@ -1,0 +1,1004 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Input bổ sung hồ sơ AIPM",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "model_scope": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguồn quy mô công trình: twin, cad hoặc map (công trình đã chọn)",
+      "enum": [
+        "twin",
+        "cad",
+        "map",
+        null
+      ]
+    },
+    "issue_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Ngày lập hồ sơ YYYY-MM-DD"
+    },
+    "document_place": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Địa danh lập hồ sơ"
+    },
+    "project_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tên dự án"
+    },
+    "investor": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Chủ đầu tư/nhà đầu tư"
+    },
+    "project_location": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Địa điểm"
+    },
+    "project_group": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nhóm dự án"
+    },
+    "building_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Loại công trình"
+    },
+    "building_grade": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Cấp công trình"
+    },
+    "design_life": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Thời hạn sử dụng theo thiết kế"
+    },
+    "decider": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Người quyết định đầu tư"
+    },
+    "capital_source": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguồn vốn"
+    },
+    "contact": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Thông tin liên hệ chủ đầu tư"
+    },
+    "recipient": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Cơ quan nhận"
+    },
+    "document_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Số văn bản"
+    },
+    "signer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Họ tên người ký"
+    },
+    "duration": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tiến độ/phân kỳ đầu tư"
+    },
+    "operating_term": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Thời hạn hoạt động"
+    },
+    "survey": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguồn/phương pháp khảo sát"
+    },
+    "crs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Hệ tọa độ"
+    },
+    "coordinates": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tọa độ ranh giới"
+    },
+    "boundaries": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tứ cận"
+    },
+    "land_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Số thửa"
+    },
+    "map_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Số tờ bản đồ"
+    },
+    "land_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Hiện trạng sử dụng đất"
+    },
+    "planning_approval": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Quy hoạch được duyệt"
+    },
+    "objectives": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Mục tiêu dự án"
+    },
+    "products": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Sản phẩm/công suất"
+    },
+    "capital_plan": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Cơ cấu và tiến độ góp vốn"
+    },
+    "vsic_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Mã ngành VSIC"
+    },
+    "cpc_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Mã ngành CPC nếu có"
+    },
+    "housing_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Loại nhà ở"
+    },
+    "urban_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Có/không thuộc đô thị"
+    },
+    "heritage_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Có/không thuộc phạm vi bảo vệ di tích"
+    },
+    "restricted_development_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Có/không thuộc khu hạn chế phát triển"
+    },
+    "contribution_method": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phương thức góp vốn"
+    },
+    "contribution_schedule": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tiến độ góp vốn"
+    },
+    "exchange_rate_source": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguồn/ngày tỷ giá"
+    },
+    "socioeconomic": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Hiệu quả kinh tế xã hội"
+    },
+    "land_explanation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nhu cầu đất/chuyển mục đích/GPMB"
+    },
+    "planning_explanation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Sự phù hợp quy hoạch"
+    },
+    "foreign_conditions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Điều kiện nhà đầu tư nước ngoài"
+    },
+    "investment_conditions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Điều kiện suất đầu tư/lao động"
+    },
+    "incentives": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Đề xuất ưu đãi/hỗ trợ và căn cứ"
+    },
+    "standards": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tiêu chuẩn/quy chuẩn lựa chọn"
+    },
+    "legal_basis": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Căn cứ pháp lý đã đối chiếu"
+    },
+    "designer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Đơn vị lập BCNCKT"
+    },
+    "surveyor": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Đơn vị khảo sát"
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Đơn vị thẩm tra"
+    },
+    "appraisal_scope": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phạm vi trình thẩm định"
+    },
+    "attachments": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Hồ sơ gửi kèm"
+    },
+    "contractor_capacity": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Chứng chỉ năng lực/hành nghề"
+    },
+    "eia_baseline": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Số liệu môi trường nền"
+    },
+    "sensitive_receptors": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Yếu tố nhạy cảm"
+    },
+    "eia_impacts": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tác động thi công"
+    },
+    "eia_mitigation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Biện pháp giảm thiểu"
+    },
+    "operation_impact_assessment": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tác động vận hành"
+    },
+    "monitoring_program": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Chương trình quan trắc"
+    },
+    "consult": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Kết quả tham vấn"
+    },
+    "dust_emission": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phát thải bụi"
+    },
+    "noise_level": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tiếng ồn"
+    },
+    "waste_quantity": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Chất thải rắn"
+    },
+    "wastewater_source": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguồn công suất XLNT"
+    },
+    "mitigation_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Trạng thái biện pháp BVMT"
+    },
+    "design_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Trạng thái thiết kế"
+    },
+    "appraisal_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Trạng thái thẩm định"
+    },
+    "terrain_validation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Xác nhận địa hình"
+    },
+    "design_elevation_approval": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phê duyệt cao độ san nền"
+    },
+    "earthwork_validation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Xác nhận đào đắp"
+    },
+    "drainage_design": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Thiết kế thoát nước"
+    },
+    "material_factor_note": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Hệ số nở rời/đầm chặt/vật liệu"
+    },
+    "reliability_assessment": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Đánh giá độ tin cậy dữ liệu ĐTM"
+    },
+    "restoration_plan": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phục hồi môi trường/bồi hoàn đa dạng sinh học"
+    },
+    "green_classification": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phân loại xanh nếu đề nghị"
+    },
+    "conclusion": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Kết luận/kiến nghị/cam kết của chủ dự án"
+    },
+    "site_area": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "building_footprint": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "floor_area": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "road_area": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "green_area": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "technical_area": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "cut_volume": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m³"
+    },
+    "fill_volume": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m³"
+    },
+    "drain_length": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m"
+    },
+    "water_pipe_length": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m"
+    },
+    "duration_months": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "tháng"
+    },
+    "ww_capacity": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m³/ngày"
+    },
+    "expected_jobs": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "người"
+    },
+    "land_cost": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "equipment_cost": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "pm_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1"
+    },
+    "consult_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1"
+    },
+    "other_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1"
+    },
+    "quantity_reserve": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1"
+    },
+    "price_reserve": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1"
+    },
+    "rain_intensity": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "mm/h"
+    },
+    "runoff_coeff": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1"
+    },
+    "floors": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "tầng"
+    },
+    "building_height": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m"
+    },
+    "population": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "người"
+    },
+    "units": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "căn"
+    },
+    "design_elevation": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "m"
+    },
+    "natural_elevation_min": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "m"
+    },
+    "natural_elevation_max": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "m"
+    },
+    "natural_elevation_mean": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "m"
+    },
+    "total_investment": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "equity_capital": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "loan_capital": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "other_capital": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "reinvested_profit": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "VND"
+    },
+    "investment_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "USD"
+    },
+    "equity_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "USD"
+    },
+    "equity_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "%"
+    },
+    "planning_compatible_area": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "m²"
+    },
+    "unit_prices": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "SN_DAO": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "SN_DAP": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "SN_CAPDAT": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "GT_DUONG": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "TN_CONG": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "CN_ONG": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "XD_XUONG": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "CX_CANHQUAN": {
+          "type": "object",
+          "required": [
+            "value",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
